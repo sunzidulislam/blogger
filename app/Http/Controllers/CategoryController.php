@@ -7,7 +7,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PostController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class PostController extends Controller
     {
         //
         $id = Auth::id();
-        $posts = Post::where('author_id', $id)->get();
-        return view('admin.posts.index', compact('posts'));
+        $categories = Category::all();
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -26,8 +26,7 @@ class PostController extends Controller
     public function create()
     {
         //
-        $categories = Category::all();
-        return view('admin.posts.create', compact('categories'));
+        return view('admin.categories.create');
     }
 
     /**
@@ -37,27 +36,16 @@ class PostController extends Controller
     {
         //
         if (Auth::check()){
-            $post = new Post();
-            $title = $request->input('title');
+            $category = new Category();
+            $name = $request->input('name');
             $description = $request->input('description');
-            $cat_id = $request->input('cat_id');
 
-            $imageName = '';
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $imageName = time().'.'.$image->getClientOriginalExtension();
-                $image->move(public_path('uploads/posts'), $imageName);
-            }
-
-            $post->title = $title;
-            $post->description = $description;
-            $post->image = !empty($imageName) ? "uploads/posts/".$imageName : 'admin/img/default-image.png';
-            $post->cat_id = $cat_id;
-            $post->author_id = Auth::id();
-            $post->save();
+            $category->name = $name;
+            $category->description = $description;
+            $category->save();
         }
 
-        return redirect()->route('post.create');
+        return redirect()->route('category.create');
 
     }
 
