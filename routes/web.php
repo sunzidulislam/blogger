@@ -24,7 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'adminDashboard'])->name('admin.index')->middleware('auth');
+Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'adminDashboard'])->name('admin.index');
 
 Route::get('/admin/posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.index');
 Route::get('/admin/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
