@@ -41,3 +41,13 @@ Route::get('/admin/categories/edit/{id}', [App\Http\Controllers\CategoryControll
 Route::put('/admin/categories/update/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
 Route::delete('/admin/categories/delete/{id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('category.delete');
 
+Route::get('/admin/settings/create', [App\Http\Controllers\HomeController::class, 'settingsCreate'])->name('settings.create');
+Route::post('/admin/settings/store', [App\Http\Controllers\HomeController::class, 'settingsStore'])->name('settings.store');
+
+
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
+Route::get('/aboutUs', [App\Http\Controllers\HomeController::class, 'aboutUs'])->name('aboutUs');
+
+Route::get('single/post/{id}', [App\Http\Controllers\PostController::class, 'singlePost'])->name('single.post');
+Route::post('comment/post/]{id}', [App\Http\Controllers\PostController::class, 'comment'])->name('post.comment');

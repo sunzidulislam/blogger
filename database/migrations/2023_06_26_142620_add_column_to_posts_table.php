@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->string('content');
-            $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
-            $table->timestamps();
+        Schema::table('posts', function (Blueprint $table) {
+            //
+            $table->boolean('is_featured')->default(false);
+            $table->string('tags')->nullable();
         });
     }
 
@@ -25,6 +23,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::table('posts', function (Blueprint $table) {
+            //
+            $table->dropColumn('is_featured', 'tags');
+        });
     }
 };
