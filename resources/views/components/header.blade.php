@@ -74,7 +74,14 @@
                     </div>
 
                     <!--search-icon-->
-                    <div class="search-icon"><a href="#search"> <i class="fas fa-search"></i></a></div>
+                    <div class="search-icon">
+                        <a href="{{ route('post.create') }}">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+
+                    </div>
+
+
 
                     <!--navbar-toggler-->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

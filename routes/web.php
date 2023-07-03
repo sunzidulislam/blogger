@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'adminDashboard'])->name('admin.index');
 
+
 Route::get('/admin/posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.index');
 Route::get('/admin/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('/admin/posts/store', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');

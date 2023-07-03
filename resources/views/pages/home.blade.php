@@ -36,8 +36,8 @@
                                                    </div>
 
                                                    <ul class="entry-meta list-inline">
-                                                       <li class="post-author-img"><a href="author.html"> <img src="{{ asset($post->user->avatar) }}" alt=""></a></li>
-                                                       <li class="post-author"><a href="author.html">{{ $post->user->name }}</a> </li>
+                                                       <li class="post-author-img"><a href="#"> <img src="{{ asset($post->user->avatar) }}" alt=""></a></li>
+                                                       <li class="post-author"><a href="#">{{ $post->user->name }}</a> </li>
                                                        <li class="post-date"> <span class="dot"></span>  {{ date('F j, Y', strtotime($post->created_at)) }}</li>
                                                        <li class="post-comment"> <span class="dot"></span> 2 comments</li>
                                                    </ul>
@@ -103,8 +103,8 @@
                                         </div>
 
                                         <ul class="entry-meta list-inline">
-                                            <li class="post-author-img"><a href="author.html"> <img src="{{ asset($post->user->avatar) }}" alt=""></a></li>
-                                            <li class="post-author"><a href="author.html">{{ $post->user->name }}</a> </li>
+                                            <li class="post-author-img"><a href="#"> <img src="{{ asset($post->user->avatar) }}" alt=""></a></li>
+                                            <li class="post-author"><a href="#">{{ $post->user->name }}</a> </li>
                                             <li class="post-date"> <span class="dot"></span>{{ date("F d, Y", strtotime( $post->created_at )) }}</li>
                                         </ul>
                                     </div>
@@ -113,20 +113,28 @@
                             </div>
                         @endforeach
 
-                        <!--pagination-->
-                        <div class="col-lg-12">
-                            <div class="pagination">
-{{--                                {{ $posts->links() }}--}}
-                                <ul class="list-inline">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#"><i class="fas fa-arrow-right"></i></a> </li>
-                                </ul>
+                            <div class="col-lg-12">
+                                <div class="pagination">
+                                   <ul class="list-inline">
+                                        @if ($posts->currentPage() > 1)
+                                            <li><a href="{{ $posts->previousPageUrl() }}"><i class="fas fa-arrow-left"></i></a></li>
+                                        @endif
+
+                                        @foreach ($posts->getUrlRange(1, $posts->lastPage()) as $page => $url)
+                                            @if ($page == $posts->currentPage())
+                                                <li class="active"><a href="{{ $url }}">{{ $page }}</a></li>
+                                            @else
+                                                <li><a href="{{ $url }}">{{ $page }}</a></li>
+                                            @endif
+                                        @endforeach
+
+                                        @if ($posts->currentPage() < $posts->lastPage())
+                                            <li><a href="{{ $posts->nextPageUrl() }}"><i class="fas fa-arrow-right"></i></a></li>
+                                        @endif
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                   </div>
                 </div>
             </section>
             <!--/-->
