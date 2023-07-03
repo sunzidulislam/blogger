@@ -90,6 +90,10 @@ class PostController extends Controller
     public function edit(string $id)
     {
         //
+
+        $post = Post::find($id);
+        $categories = Category::all();
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -97,7 +101,35 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        if (Auth::check()){
+            $post = Post::find($id);
+            $title = $request->input('title');
+            $description = $request->input('description');
+            $cat_id = $request->input('cat_id');
+            $tags = $request->input('tags');
+            $is_featured = $request->input('is_featured');
+
+
+            $imageName = '';
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = time().'.'.$image->getClientOriginalExtension();
+                $image->move(public_path('uploads/posts'), $imageName);
+            }
+
+            $post->title = $title;
+            $post->description = $description;
+            $post->image = !empty($imageName) ? "uploads/posts/".$imageName : 'admin/img/default-image.png';
+            $post->cat_id = $cat_id;
+            $post->is_featured = $is_featured;
+            $post->tags = $tags;
+            $post->author_id = Auth::id();
+            $post->update();
+        }
+
+        return redirect()->route('post.index');
         //
+
     }
 
     /**
@@ -106,6 +138,11 @@ class PostController extends Controller
     public function destroy(string $id)
     {
         //
+        $post = Post::find($id);
+        $post->delete();
+
+
+        return redirect()->route('post.create');
     }
 
     public function singlePost(Request $request, $id){

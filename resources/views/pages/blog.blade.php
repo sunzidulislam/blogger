@@ -92,34 +92,34 @@ if (isset($tags)){
                                      <div class="author-content">
                                          <h6 class="name"> Hi, I'm {{ $post->user->name }}</h6>
                                          <p class="bio">
-                                             I'm David Smith, husband and father ,
+                                             A professional Laravel Developer.
                                              I love Photography,travel and nature. I'm working as a writer and blogger with experience
                                              of 5 years until now.
                                          </p>
                                          <div class="social-media">
                                              <ul class="list-inline">
                                                  <li>
-                                                     <a href="#" class="color-facebook">
+                                                     <a href="https://www.facebook.com/sunzidulislam.12" class="color-facebook">
                                                          <i class="fab fa-facebook"></i>
                                                      </a>
                                                  </li>
                                                  <li>
-                                                     <a href="#" class="color-instagram">
+                                                     <a href="https://www.youtube.com/" class="color-instagram">
                                                          <i class="fab fa-instagram"></i>
                                                      </a>
                                                  </li>
                                                  <li>
-                                                     <a href="#" class="color-twitter">
+                                                     <a href="https://twitter.com/elonmusk" class="color-twitter">
                                                          <i class="fab fa-twitter"></i>
                                                      </a>
                                                  </li>
                                                  <li>
-                                                     <a href="#" class="color-youtube">
+                                                     <a href="https://www.linkedin.com/in/sunzidul-islam-777b19163/" class="color-youtube">
                                                          <i class="fab fa-youtube"></i>
                                                      </a>
                                                  </li>
                                                  <li>
-                                                     <a href="#" class="color-pinterest">
+                                                     <a href="https://www.linkedin.com/in/sunzidul-islam-777b19163/" class="color-pinterest">
                                                          <i class="fab fa-pinterest"></i>
                                                      </a>
                                                  </li>

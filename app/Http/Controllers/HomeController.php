@@ -46,6 +46,9 @@ class HomeController extends Controller
         return view('admin.settings.create');
     }
     public function settingsStore(Request $request){
+
+        $author_id =  Auth::id();
+
         $facebook = $request->input('facebook');
         $twitter = $request->input('twitter');
         $instagram = $request->input('instagram');
@@ -54,10 +57,9 @@ class HomeController extends Controller
 
         $mode = $request->input('mode');
 
-
         $settings = Settings::updateOrCreate(
-            ['author_id' => Auth::id()],
             [
+                'author_id' => $author_id,
                 'fb_url' => $facebook,
                 'tw_url' => $twitter,
                 'li_url' => $linkedin,
@@ -66,6 +68,7 @@ class HomeController extends Controller
                 'mode' => $mode ?? "dark"
             ]
         );
+
 
 
         return redirect()->route('settings.create');

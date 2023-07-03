@@ -34,15 +34,15 @@ Route::put('/admin/posts/update/{id}', [App\Http\Controllers\PostController::cla
 Route::delete('/admin/posts/delete/{id}', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.delete');
 
 
-Route::get('/admin/categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('category.index');
-Route::get('/admin/categories/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create');
-Route::post('/admin/categories/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
-Route::get('/admin/categories/edit/{id}', [App\Http\Controllers\CategoryController::class, 'edit'])->name('category.edit');
-Route::put('/admin/categories/update/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
-Route::delete('/admin/categories/delete/{id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('category.delete');
+Route::get('/admin/categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('category.index')->middleware('auth');
+Route::get('/admin/categories/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create')->middleware('auth');
+Route::post('/admin/categories/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store')->middleware('auth');
+Route::get('/admin/categories/edit/{id}', [App\Http\Controllers\CategoryController::class, 'edit'])->name('category.edit')->middleware('auth');
+Route::put('/admin/categories/update/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update')->middleware('auth');
+Route::delete('/admin/categories/delete/{id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('category.delete')->middleware('auth');
 
-Route::get('/admin/settings/create', [App\Http\Controllers\HomeController::class, 'settingsCreate'])->name('settings.create');
-Route::post('/admin/settings/store', [App\Http\Controllers\HomeController::class, 'settingsStore'])->name('settings.store');
+Route::get('/admin/settings/create', [App\Http\Controllers\HomeController::class, 'settingsCreate'])->name('settings.create')->middleware('auth');
+Route::post('/admin/settings/store', [App\Http\Controllers\HomeController::class, 'settingsStore'])->name('settings.store')->middleware('auth');
 
 
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');

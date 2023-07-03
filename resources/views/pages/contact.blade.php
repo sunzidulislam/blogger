@@ -24,8 +24,8 @@
                                          allowfullscreen="">
                                  </iframe>
                              </div>
-                             <form action="assets/php/mail.php" class="widget-form contact_form " method="POST" id="main_contact_form">
-                                 <h5>Feel free to contact any time.</h5>
+                             <form action="https://formspree.io/f/mqkvzvkk" class="widget-form contact_form " method="POST" id="main_contact_form">
+                                 <h5>Feel free to contact any time.</h5> @csrf
                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, repudiandae.</p>
                                  <div class="alert alert-success contact_msg" style="display: none" role="alert">
                                      Your message was sent successfully.

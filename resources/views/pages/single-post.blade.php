@@ -91,6 +91,8 @@ if (isset($tags)){
 
                              <!--next & previous-posts-->
                              <div class="row">
+                                 @if(!is_null($prevPost))
+
                                  <div class="col-md-6">
                                      <div class="widget">
                                          <div class="widget-next-post">
@@ -109,6 +111,10 @@ if (isset($tags)){
                                          </div>
                                      </div>
                                  </div>
+
+                                 @endif
+
+                                 @if(!is_null($nextPost))
                                  <div class="col-md-6">
                                      <div class="widget">
                                          <div class="widget-previous-post">
@@ -127,6 +133,7 @@ if (isset($tags)){
                                          </div>
                                      </div>
                                  </div>
+                                     @endif
                              </div><!--/-->
 
                              <!--widget-comments-->

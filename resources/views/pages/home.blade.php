@@ -36,7 +36,7 @@
                                                    </div>
 
                                                    <ul class="entry-meta list-inline">
-                                                       <li class="post-author-img"><a href="author.html"> <img src="assets/img/author/1.jpg" alt=""></a></li>
+                                                       <li class="post-author-img"><a href="author.html"> <img src="{{ asset($post->user->avatar) }}" alt=""></a></li>
                                                        <li class="post-author"><a href="author.html">{{ $post->user->name }}</a> </li>
                                                        <li class="post-date"> <span class="dot"></span>  {{ date('F j, Y', strtotime($post->created_at)) }}</li>
                                                        <li class="post-comment"> <span class="dot"></span> 2 comments</li>
@@ -103,7 +103,7 @@
                                         </div>
 
                                         <ul class="entry-meta list-inline">
-                                            <li class="post-author-img"><a href="author.html"> <img src="" alt=""></a></li>
+                                            <li class="post-author-img"><a href="author.html"> <img src="{{ asset($post->user->avatar) }}" alt=""></a></li>
                                             <li class="post-author"><a href="author.html">{{ $post->user->name }}</a> </li>
                                             <li class="post-date"> <span class="dot"></span>{{ date("F d, Y", strtotime( $post->created_at )) }}</li>
                                         </ul>
