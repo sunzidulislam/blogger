@@ -25,7 +25,14 @@ class PostController extends Controller
         //
         $id = Auth::id();
 
-        $adminposts = Post::where('author_id', $id)->get();
+        if(Auth::user()->role == 'admin'){
+            $adminposts = Post::all();
+
+        }else {
+            $adminposts = Post::where('author_id', $id)->get();
+        }
+
+
 
         return view('admin.posts.index', compact('adminposts'));
     }

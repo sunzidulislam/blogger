@@ -17,8 +17,10 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::redirect('/','/home');
 
-Auth::routes();
+
+Auth::routes();g
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
