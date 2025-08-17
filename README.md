@@ -38,9 +38,9 @@ This project follows the core principles of **CRUD (Create, Read, Update, Delete
 ## 📸 Demo Video
 
 🎥 Watch a quick demo of **Blogger** here:  
-👉 [LinkedIn Video Demo](https://www.linkedin.com/posts/sunzidulislam_webdevelopment-laravel-activity-7118843915016826880-1Rzg)  
-  
----
+👉 
+
+https://github.com/user-attachments/assets/75026458-fe00-416e-8dd2-0edd8cf44d21
 
 ## ⚡ Installation & Setup
 
@@ -83,7 +83,7 @@ This project follows the core principles of **CRUD (Create, Read, Update, Delete
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 blogger/
@@ -103,11 +103,9 @@ blogger/
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Md. Sunzidul Islam**
 📧 [sunzidulislam12@gmail.com](mailto:sunzidulislam12@gmail.com)
 🔗 [LinkedIn](https://www.linkedin.com/in/sunzidulislam) | [GitHub](https://github.com/sunzidulislam)
 
-Would you like me to also make a **badge section (e.g., Laravel version, PHP version, license, stars/forks)** at the top like many open-source repos have?
-```
