@@ -42,14 +42,12 @@ This project follows the core principles of **CRUD (Create, Read, Update, Delete
 
 https://github.com/user-attachments/assets/75026458-fe00-416e-8dd2-0edd8cf44d21
 
-````markdown
 ## ⚡ Installation & Setup
 
 1. Clone the repository:  
    ```bash
    git clone https://github.com/sunzidulislam/blogger.git
    cd blogger
-````
 
 2. Install dependencies:
 
