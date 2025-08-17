@@ -42,8 +42,6 @@ This project follows the core principles of **CRUD (Create, Read, Update, Delete
 
 https://github.com/user-attachments/assets/75026458-fe00-416e-8dd2-0edd8cf44d21
 
-Got it ✅ — I’ll clean up your README section so it looks polished, fixes the Markdown issues, and keeps formatting consistent. Here’s the refined version (with proper code blocks and author section):
-
 ````markdown
 ## ⚡ Installation & Setup
 
